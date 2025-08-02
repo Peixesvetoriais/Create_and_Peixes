@@ -1,6 +1,6 @@
 Olá, como voces estão?
 Eu sou o Peixes e seja bem-vindo aos arquivos do kubejs do...
-#CREATE AND PEIXES
+# CREATE AND PEIXES #
 
 O foco inicial deste repositório é a adição de receitas que facilite a criação de itens do create, 
 bem como outros itens do modpack.
