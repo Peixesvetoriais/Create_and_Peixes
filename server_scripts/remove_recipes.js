@@ -1,10 +1,5 @@
 ServerEvents.recipes(event => {
     //Create
-    event.remove({ not: { type: 'minecraft:stonecutting' }, output: 'create:shaft' })
-    event.remove({ not: { type: 'minecraft:stonecutting' }, output: 'create:cogwheel' })
-    event.remove({ not: { type: 'create:deploying' }, output: 'create:cogwheel' })
-    event.remove({ not: { type: 'minecraft:stonecutting' }, output: 'create:large_cogwheel' })
-    event.remove({ not: { type: 'create:deploying' }, output: 'create:large_cogwheel' })
     event.remove({ not: { type: 'minecraft:stonecutting' }, output: 'create:gearbox' })
     event.remove({ not: { type: 'minecraft:stonecutting' }, output: 'create:vertical_gearbox' })
     event.remove({ not: { type: 'minecraft:stonecutting' }, output: 'create:encased_chain_drive' })

@@ -1,70 +1,49 @@
-//Receitas em formato
 ServerEvents.recipes(event => {
-    // Constantes de banco de dados
+    //Array do Create e addons do Create
     let events = JsonIO.read("kubejs/data/events.json");
 
-    //Mecanismo tier 1
-    event.shapeless(
-        Item.of('kubejs:woodenmechanism', 2),
-        [
-            '#minecraft:wooden_slabs',
-            'create:andesite_alloy',
-            'create:andesite_casing',
-        ]
-    )
-    //Create Base
-    events["create-base"].forEach((el) => event.stonecutting(el[0], el[1]));
-
-    //Create: Connected
-    event.stonecutting('4x create_connected:encased_chain_cogwheel', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:inverted_clutch', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:inverted_gearshift', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:parallel_gearbox', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:vertical_parallel_gearbox', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:six_way_gearbox', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:vertical_six_way_gearbox', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:cross_connector', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:shear_pin', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:overstress_clutch', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:centrifugal_clutch', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:freewheel_clutch', 'kubejs:woodenmechanism')
-    event.stonecutting('2x create_connected:brake', 'kubejs:woodenmechanism')
-    event.stonecutting('create_connected:item_silo', 'kubejs:woodenmechanism')
-
-    //Maquinas tier 2 
-    //Molde de Zinco
+    //Receitas tier 1
     event.shaped(
-        Item.of('kubejs:zinc_upgrade', 2),
+        //Receita do Mecanismo tier 1
+        Item.of('kubejs:woodenmechanism', 3),
         [
+            'AAA',
             'ABA',
-            'ACA',
             'AAA'
         ],
         {
-            A: 'minecraft:andesite',
-            B: 'create:zinc_ingot',
-            C: 'create:andesite_casing'
+            A: 'create:andesite_alloy',
+            B: 'create:andesite_casing'
         }
     )
-    //Mecanismo tier 2
-    event.smithing(
-        'kubejs:zinc_mechanism',
-        'kubejs:zinc_upgrade',
-        'kubejs:woodenmechanism',
-        'minecraft:redstone'
-    )
-    //Create Base
-    event.stonecutting('create:mechanical_drill', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:mechanical_saw', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:mechanical_harvester', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:mechanical_plough', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:mechanical_roller', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:basin', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:mechanical_press', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:mechanical_mixer', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:millstone', 'kubejs:zinc_mechanism')
-    event.stonecutting('create:encased_fan', 'kubejs:zinc_mechanism')
-
+    //Receitas do Create
+    events["create-base-tier1"].forEach((el) => event.stonecutting(el[0], el[1]));
+    //Receitas do Create: Connected
+    events["create-connected-tier1"].forEach((el) => event.stonecutting(el[0], el[1]));
+        //Receita do Mecanismo tier 2
+        //Receita do Molde de Zinco
+        event.shaped(
+            Item.of('kubejs:zinc_upgrade', 2),
+            [
+                'ABA',
+                'ACA',
+                'AAA'
+            ],
+            {
+                A: 'minecraft:granite',
+                B: 'create:zinc_ingot',
+                C: 'create:andesite_casing'
+            }
+        )
+        //Receita do Mecanismo tier 2
+        event.smithing(
+            'kubejs:zinc_mechanism',
+            'kubejs:zinc_upgrade',
+            'kubejs:woodenmechanism',
+            'minecraft:redstone'
+        )
+    //Receitas do Create
+    events["create-base-tier2"].forEach((el) => event.stonecutting(el[0], el[1]));
     //Maquinas tier fluido
     //Mecanismo tier Fluido
     event.shaped(
@@ -109,14 +88,19 @@ ServerEvents.recipes(event => {
 
     //Maquinas tier redstone
     //Mecanismo tier Redstone
-    event.shapeless(
+    event.shaped(
         Item.of('kubejs:computing_mechanism', 2),
         [
-            'minecraft:cobblestone',
-            'create:transmitter',
-            'create:cardboard_block',
-            'create:andesite_alloy'
-        ]
+            'ABA',
+            'ACA',
+            'ADA'
+        ],
+        {
+            A: 'minecraft:quartz',
+            B: 'create:andesite_alloy',
+            C: 'minecraft:redstone_block',
+            D: 'create:cardboard_block'
+        }
     )
     //Create Base
     event.stonecutting('create:packager', 'kubejs:computing_mechanism')

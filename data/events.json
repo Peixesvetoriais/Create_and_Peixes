@@ -1,5 +1,5 @@
 {
-    "create-base": [
+    "create-base-tier1": [
         ["8x create:shaft", "kubejs:woodenmechanism"],
         ["4x create:cogwheel", "kubejs:woodenmechanism"],
         ["2x create:large_cogwheel", "kubejs:woodenmechanism"],
@@ -33,5 +33,33 @@
         ["2x create:hand_crank", "kubejs:woodenmechanism"],
         ["2x create:portable_storage_interface", "kubejs:woodenmechanism"],
         ["3x create:item_hatch", "kubejs:woodenmechanism"]
+    ],
+    "create-base-tier2": [
+        ["create:mechanical_drill", "kubejs:zinc_mechanism"],
+        ["create:mechanical_saw", "kubejs:zinc_mechanism"],
+        ["create:mechanical_harvester", "kubejs:zinc_mechanism"],
+        ["create:mechanical_plough", "kubejs:zinc_mechanism"],
+        ["create:mechanical_roller", "kubejs:zinc_mechanism"],
+        ["create:basin", "kubejs:zinc_mechanism"],
+        ["create:mechanical_press", "kubejs:zinc_mechanism"],
+        ["create:mechanical_mixer", "kubejs:zinc_mechanism"],
+        ["create:millstone", "kubejs:zinc_mechanism"],
+        ["create:encased_fan", "kubejs:zinc_mechanism"]
+    ],
+    "create-connected-tier1": [
+        ["4x create_connected:encased_chain_cogwheel", "kubejs:woodenmechanism"],
+        ["2x create_connected:inverted_clutch", "kubejs:woodenmechanism"],
+        ["2x create_connected:inverted_gearshift", "kubejs:woodenmechanism"],
+        ["2x create_connected:parallel_gearbox", "kubejs:woodenmechanism"],
+        ["2x create_connected:vertical_parallel_gearbox", "kubejs:woodenmechanism"],
+        ["2x create_connected:six_way_gearbox", "kubejs:woodenmechanism"],
+        ["2x create_connected:vertical_six_way_gearbox", "kubejs:woodenmechanism"],
+        ["2x create_connected:cross_connector", "kubejs:woodenmechanism"],
+        ["2x create_connected:shear_pin", "kubejs:woodenmechanism"],
+        ["2x create_connected:overstress_clutch", "kubejs:woodenmechanism"],
+        ["2x create_connected:centrifugal_clutch", "kubejs:woodenmechanism"],
+        ["2x create_connected:freewheel_clutch", "kubejs:woodenmechanism"],
+        ["2x create_connected:brake", "kubejs:woodenmechanism"],
+        ["create_connected:item_silo", "kubejs:woodenmechanism"]
     ]
 }
